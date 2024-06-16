@@ -1,0 +1,1 @@
+json.array! @songs, :artist, :name, :id
