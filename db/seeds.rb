@@ -1479,13 +1479,13 @@
     }
 ]
 
-# rooms.each do |room|
-#   room_entry = Room.create({ name: room[:name] })
-#   room[:tasks].each do |task|
-#     Task.create(name: task[:name], description: task[:description], level: task[:points],
-#     is_complete: task[:isComplete], room_id: room_entry[:id])
-#   end
-# end
+rooms.each do |room|
+  room_entry = Room.create({ name: room[:name] })
+  room[:tasks].each do |task|
+    Task.create(name: task[:name], description: task[:description], level: task[:points],
+    is_complete: task[:isComplete], room_id: room_entry[:id])
+  end
+end
 
 songs = [
     {
