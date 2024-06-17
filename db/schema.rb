@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_06_12_055847) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
@@ -22,8 +25,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_055847) do
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.string "artist"
-    t.string "tempo"
-    t.string "lyrics"
+    t.integer "tempo"
+    t.jsonb "lyrics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "song_url"
@@ -34,7 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_055847) do
     t.string "description"
     t.integer "level"
     t.boolean "is_complete"
-    t.integer "room_id"
+    t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "date_completed"
