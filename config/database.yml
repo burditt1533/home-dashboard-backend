@@ -89,5 +89,5 @@ production:
   # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
   username: postgres
   password: Sluget12!
-  # host: database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com
+  host: database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com
   port: 5432
