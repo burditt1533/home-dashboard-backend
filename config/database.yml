@@ -80,5 +80,8 @@ test:
 production:
   <<: *default
   database: home_dash_backend_production
-  username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
-  password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
+  # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
+  # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
+  url: database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com
+  username: admin
+  password: Sluget12!
