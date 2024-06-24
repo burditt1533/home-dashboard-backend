@@ -21,13 +21,12 @@ default: &default
 
 development:
   <<: *default
+  host: database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com
   database: home_dash_backend_development
   # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
   # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
   username: postgres
   password: Sluget12!
-  host: "database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com"
-  port: 5432
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
@@ -84,10 +83,13 @@ test:
 #
 production:
   <<: *default
-  database: "home_dash_backend_production"
-  # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
-  # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
-  username: postgres
-  password: Sluget12!
-  host: "database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com"
-  port: 5432
+  database: <%= HOME_DASH_BACKEND_DATABASE_NAME %>
+  username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
+  password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_URL"] %>
+  port: <%= ENV["HOME_DASH_BACKEND_DATABASE_PORT"] %>
+  # database: "home_dash_backend_production"
+  # username: postgres
+  # password: Sluget12!
+  # host: "database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com"
+  # port: 5432
