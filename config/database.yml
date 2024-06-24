@@ -21,12 +21,12 @@ default: &default
 
 development:
   <<: *default
-  database: home_dash_backend_development
+  # database: home_dash_backend_development
   # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
   # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
-  url: database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com
-  username: admin
-  password: Sluget12!
+  url: "database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com"
+  username: "postgres"
+  password: "Sluget12!"
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -84,9 +84,9 @@ test:
 #
 production:
   <<: *default
-  database: home_dash_backend_production
+  database: "home_dash_backend_production"
   # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
   # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
-  url: database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com
-  username: admin
-  password: Sluget12!
+  url: "database-1.chkyuy4gggla.us-west-2.rds.amazonaws.com"
+  username: "postgres"
+  password: "Sluget12!"
