@@ -2,14 +2,7 @@
 
 # If running the rails server then create or migrate existing database
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
-  ./bin/rails db:setup
   ./bin/rails db:migrate
-  # RUN echo "creating database"
-# RUN bundle exec rake db:create
-# CMD ["./bin/rails", "db:create"]
-# RUN echo "migrating database"
-# RUN bundle exec rake db:migrate
-# CMD ["./bin/rails", "db:migrate"]
 fi
 
 exec "${@}"

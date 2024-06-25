@@ -1534,3 +1534,23 @@ songs.each do |song|
         song_url: song[:song_url]
     })
 end
+
+cards = [
+    { id: 1, guessAction: 'Bowling', forbiddenWords: [{word: 'Ball'}, {word: 'Alley'}, {word: 'Bowl'} ,{word: 'Roll'}, {word: 'Pin'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: false },
+    { id: 2, guessAction: 'Swimming In A Lake', forbiddenWords: [{word: 'Stroke'}, {word: 'Water'}, {word: 'Bowl'} ,{word: 'Roll'}, {word: 'Pin'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: false },
+    { id: 3, guessAction: 'Motorboating Boobs', forbiddenWords: [{word: 'Ball'}, {word: 'Alley'}, {word: 'Bowl'} ,{word: 'Roll'}, {word: 'Pin'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: true },
+    { id: 4, guessAction: 'Eating Chips', forbiddenWords: [{word: 'Bag'}, {word: 'Lays'}, {word: 'Doritos'} ,{word: 'Potato'}, {word: 'Dig'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: false },
+    { id: 5, guessAction: 'Drinking Bath Water', forbiddenWords: [{word: 'Ball'}, {word: 'Alley'}, {word: 'Bowl'} ,{word: 'Roll'}, {word: 'Pin'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: false },
+    { id: 6, guessAction: 'Climbing Stairs', forbiddenWords: [{word: 'Ball'}, {word: 'Alley'}, {word: 'Bowl'} ,{word: 'Roll'}, {word: 'Pin'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: false },
+    { id: 7, guessAction: 'Shooting a basketball', forbiddenWords: [{word: 'Hands'}, {word: 'Throw'}, {word: 'Launch'} ,{word: 'Curry'}, {word: 'Sport'}], descriptiveHint: 'Bowling a bowling ball down a lane', timesPlayed: 0, isExplicit: false },
+]
+
+cards.each do |card|
+  Card.create({
+    guess_action: card[:guessAction],
+    forbidden_words: card[:forbiddenWords],
+    descriptive_hint: card[:descriptiveHint],
+    times_played: card[:timesPlayed],
+    is_explicit: card[:isExplicit]
+  })
+end

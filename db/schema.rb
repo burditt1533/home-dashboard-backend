@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_12_055847) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_045357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "guess_action"
+    t.jsonb "forbidden_words"
+    t.string "descriptive_hint"
+    t.integer "times_played"
+    t.boolean "is_explicit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"

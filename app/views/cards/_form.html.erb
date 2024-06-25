@@ -1,0 +1,42 @@
+<%= form_with(model: card) do |form| %>
+  <% if card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+        <% card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :guess_action, style: "display: block" %>
+    <%= form.text_field :guess_action %>
+  </div>
+
+  <div>
+    <%= form.label :forbidden_words, style: "display: block" %>
+    <%= form.text_field :forbidden_words %>
+  </div>
+
+  <div>
+    <%= form.label :descriptive_hint, style: "display: block" %>
+    <%= form.text_field :descriptive_hint %>
+  </div>
+
+  <div>
+    <%= form.label :times_played, style: "display: block" %>
+    <%= form.number_field :times_played %>
+  </div>
+
+  <div>
+    <%= form.label :is_explicit, style: "display: block" %>
+    <%= form.text_field :is_explicit %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

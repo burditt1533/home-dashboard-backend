@@ -22,7 +22,7 @@ default: &default
 development:
   <<: *default
   host: aws-pg.chkyuy4gggla.us-west-2.rds.amazonaws.com
-  database: home_dash_backend_development
+  database: aws_postgres
   # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
   # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
   username: postgres
