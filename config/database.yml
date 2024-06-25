@@ -14,7 +14,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: utf8
+  encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -22,7 +22,7 @@ default: &default
 development:
   <<: *default
   host: aws-pg.chkyuy4gggla.us-west-2.rds.amazonaws.com
-  database: aws_postgres
+  database: home_dash_backend_development
   # username: <%= ENV["HOME_DASH_BACKEND_DATABASE_USERNAME"] %>
   # password: <%= ENV["HOME_DASH_BACKEND_DATABASE_PASSWORD"] %>
   username: postgres
