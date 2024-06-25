@@ -30,11 +30,6 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
-RUN echo "creating database"
-RUN rails db:create
-RUN echo "migrating database"
-RUN rails db:migrate
-
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
@@ -61,6 +56,11 @@ USER rails:rails
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
+RUN echo "creating database"
+RUN rails db:create
+RUN echo "migrating database"
+RUN rails db:migrate
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
