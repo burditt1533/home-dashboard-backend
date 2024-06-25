@@ -30,6 +30,11 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
+RUN echo "creating database"
+RUN rails db:create
+RUN echo "migrating database"
+RUN rails db:migrate
+
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
