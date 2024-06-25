@@ -58,9 +58,9 @@ USER rails:rails
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 RUN echo "creating database"
-RUN rails db:create
+RUN rake db:create
 RUN echo "migrating database"
-RUN rails db:migrate
+RUN rake db:migrate
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
